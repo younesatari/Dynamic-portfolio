@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
+
+@import "media-queries";
+
+/* Variables */
+$dark-color: #616161;
+$section-text-size: 1.1rem;
+$section-title-size: 2rem !important;
+$purple-one: rgba(156, 39, 176,0.9);
+$purple-two: rgba(103, 58, 183,0.9);
+
+/* Common Styles */
+%section-title-shared {
+   position: relative;
+   font-size: $section-title-size;
+}
+
+%title-style-shared {
+   &::after {
+      content: "";
+      position: absolute;
+      background: rgba(103, 58, 183,1);
+      width: 75px;
+      height: 1px;
+      bottom: -8px;
+      left: 49%;
+      margin-left: -45px;
+   }
+
+   &::before {
+      content: "";
+      position: absolute;
+      background: rgba(156, 39, 176,1);
+      width: 75px;
+      height: 1px;
+      bottom: -13px;
+      left: 50%;
+      margin-left: -30px;
+   }
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box !important;
+   line-height: 1.6;
+   outline: none;
+   text-decoration: none !important;
+}
+
+body {
+	font-family: 'lato', sans-serif !important;  
+	color:#fff;	
+}
+
+/* HEADER Section */
+header {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   background-image: linear-gradient(to right bottom, 
+	 rgba(156, 39, 176,0.9), 
+	 rgba(103, 58, 183,0.9)),
+	   url('../img/nat-7.jpg');
+   background-repeat: no-repeat;   
+   background-size: cover;   
+   background-clip: bottom center;
+
+   @include screen {
+      height: 80vh !important;
+   }
+
+   @include verySmallScreen {
+      height: 45vh !important;
+   }
+
+   #navigation {
+
+      img {
+         width:37px;
+      }
+
+      .navbar-toggler:focus,
+      .navbar-toggler:active,
+      .navbar-toggler-icon:focus {
+      outline: none;
+      box-shadow: none;
+      }
+
+      .navbar-collapse {
+         .navbar-nav {
+            li {
+               a {
+                  color: #fff !important;
+                  font-size: 1rem;
+               }
+   
+               &:hover {
+                  border-bottom: 1px solid #fff;
+               }
+            }
+         }
+      }
+   }
+
+   /* HERO Section */
+#hero {
+   margin-top: 175px;
+
+   @include screen {
+      margin-top: 115px;
+   }
+
+   @include smallScreen {
+      margin-top: 60px;
+   }
+
+   h1 {
+      font-weight: 600;
+   }
+
+   p {
+      letter-spacing: .3rem;
+      font-size: 1rem;
+
+      @include largeScreen {
+         font-size: .9rem;
+      }
+
+      @include tablet {
+         font-size: .8rem;
+      }
+
+      @include smallScreen {
+         font-size: .5rem;
+      }
+   }
+
+   .btn-arrow {
+      position: absolute;
+      bottom:35px;
+      animation: arrowUpAndDown 1s infinite;
+
+      @include smallScreen {
+         display: none !important;
+      }
+   }
+
+   @keyframes arrowUpAndDown {
+      0% {
+         transform: translateY(0);
+      }
+
+      100% {
+         transform: translateY(-10%);
+      }
+   }
+}
+}
+
+/* ABOUT Section */
+#about {
+   #about-img {
+      width:300px;
+      border-radius: 50%;
+   }
+
+   .about-title {
+      @extend %section-title-shared;
+      @extend %title-style-shared;
+      color:#616161;
+   }
+
+   p {
+      .text-link {
+         color:rgba(103, 58, 183,1);
+      }
+
+      font-size: $section-text-size;
+      color:$dark-color;
+
+      @include screen {font-size: 1rem;}
+   }
+}
+
+/* EXPERIENCE Section */
+#experience {
+   background-image: linear-gradient(to right bottom, 
+	 rgba(156, 39, 176,0.9), 
+	 rgba(103, 58, 183,0.9)),
+	   url('../img/bg.jpg');
+   background-repeat: no-repeat;   
+   background-size: cover;   
+   background-attachment: fixed;
+   background-clip: bottom center;
+   .experience-title {
+      @extend %section-title-shared;
+      color: #fff;
+      &::after {
+         content: '';
+         position: absolute;
+         background: #fff;
+         width: 75px;
+         height: 1px;
+         bottom: -8px;
+         left: 49%;
+         margin-left: -45px;
+      }
+   
+      &::before {
+         content: '';
+         position: absolute;
+         background: #fff;
+         width: 75px;
+         height: 1px;
+         bottom: -13px;
+         left: 50%;
+         margin-left: -30px;
+      }
+   }
+
+   .exp-text {
+      margin-bottom: 100px !important;
+   }
+
+   .tech-stack {
+      h4 {
+         font-weight: 300;
+      }
+   }
+
+   p {
+      color: #fff;
+      font-size: $section-text-size;
+   }
+
+   .techs img{
+      width: 50px;
+      transition: transform .3s;
+      
+      &:hover {
+         transform: scale(1.2);
+      }
+   }
+}
+
+/* WORK Section */
+#work {
+   h1 {
+      @extend %title-style-shared;
+      @extend %section-title-shared;
+      margin-bottom: 80px;
+   }
+
+   .project {
+      padding:.2rem !important;
+      
+      article {
+         cursor: pointer;
+         position: relative;
+         .project-img {
+            width: 100%;
+            height:100%;
+         }
+
+         .project-info-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: .3rem;
+            background-image: linear-gradient(to right bottom, rgba(126, 44, 141, 0.9), 
+            rgba(103, 58, 183,0.8));
+            transform: scale(0);
+            transform-origin: top right;
+            transition: all .4s;
+            border-radius: 50rem 0 50rem 50rem;
+            opacity: 0;
+
+            .project-info-content {
+               .project-name {
+                  font-size: 1.6rem !important;
+               }
+
+               .project-techs {
+                  font-size: .8rem;
+               }
+
+               .project-btn {
+                  transition: all .4s;
+
+                  &:hover {
+                     font-size: 1.1rem !important;
+                  }
+               }
+            }
+         }
+
+         &:hover .project-info-container {
+            transform: scale(1);
+            border-radius: 0;
+            opacity: 1;
+         }
+      }
+   }
+}
+
+/* CONTACT Section */
+#contact {
+
+   margin: 10rem 0 1.5rem 0;
+
+   a {
+      
+      i {
+         color: rgba(103, 58, 183,1);
+         font-size: 3rem;
+         padding:.1rem;
+         margin:0 .6rem;
+         transition: all .3s;
+
+         @include smallScreen {font-size: 2rem}
+
+         &:hover {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+         }
+      }
+   }
+
+   p {
+      font-size: 1.1rem;
+      @include smallScreen {font-size: 1rem}
+
+   }
+}

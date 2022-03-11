@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400&display=swap");
+/* Variables */
+#about .about-title, #experience .experience-title, #work h1 {
+  position: relative;
+  font-size: 2rem !important; }
+
+#about .about-title::after, #work h1::after {
+  content: "";
+  position: absolute;
+  background: #673ab7;
+  width: 75px;
+  height: 1px;
+  bottom: -8px;
+  left: 49%;
+  margin-left: -45px; }
+#about .about-title::before, #work h1::before {
+  content: "";
+  position: absolute;
+  background: #9c27b0;
+  width: 75px;
+  height: 1px;
+  bottom: -13px;
+  left: 50%;
+  margin-left: -30px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  line-height: 1.6; }
+
+body {
+  font-family: 'lato', sans-serif !important;
+  color: #fff; }
+
+a {
+  text-decoration: none !important; }
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, rgba(156, 39, 176, 0.9), rgba(103, 58, 183, 0.9)), url("../img/nat-7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: bottom center; }
+  header #navigation img {
+    width: 37px; }
+  header #navigation .navbar-nav li a {
+    color: #fff !important;
+    font-size: 1rem; }
+  header #navigation .navbar-nav li a:hover {
+    border-bottom: 1px solid #fff; }
+
+.hero {
+  margin-top: 175px; }
+  .hero h1 {
+    font-weight: 600; }
+  .hero p {
+    letter-spacing: .3rem;
+    font-size: 1rem; }
+    @media screen and (max-width: 1200px) {
+      .hero p {
+        font-size: .9rem; } }
+    @media screen and (max-width: 895px) {
+      .hero p {
+        font-size: .8rem; } }
+    @media screen and (max-width: 434px) {
+      .hero p {
+        font-size: .5rem; } }
+  .hero .btn-arrow {
+    position: absolute;
+    bottom: 35px; }
+
+#about #about-img {
+  width: 300px;
+  border-radius: 50%; }
+#about .about-title {
+  color: #616161; }
+#about p {
+  font-size: 1.1rem;
+  color: #616161; }
+  #about p .text-link {
+    color: #673ab7; }
+
+#experience {
+  background-image: linear-gradient(to right bottom, rgba(156, 39, 176, 0.9), rgba(103, 58, 183, 0.9)), url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-clip: bottom center; }
+  #experience .experience-title {
+    color: #fff; }
+    #experience .experience-title::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 75px;
+      height: 1px;
+      bottom: -8px;
+      left: 49%;
+      margin-left: -45px; }
+    #experience .experience-title::before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      width: 75px;
+      height: 1px;
+      bottom: -13px;
+      left: 50%;
+      margin-left: -30px; }
+  #experience .exp-text {
+    margin-bottom: 100px !important; }
+  #experience .tech-stack h4 {
+    font-weight: 300; }
+  #experience p {
+    color: #fff;
+    font-size: 1.1rem; }
+  #experience .techs img {
+    width: 50px;
+    transition: transform .3s; }
+    #experience .techs img:hover {
+      transform: scale(1.2); }
+
+#work h1 {
+  margin-bottom: 80px; }
+#work .project {
+  padding: 1rem; }
+  #work .project article {
+    position: relative;
+    cursor: pointer; }
+    #work .project article .project-img {
+      width: 100%;
+      height: 100%;
+      height: 220px; }
+    #work .project article:hover .project-info-container {
+      transform: translateY(0) !important;
+      visibility: visible;
+      opacity: 1;
+      transition: all .3s; }
+  #work .project .project-info-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(156, 39, 176, 0.9), rgba(103, 58, 183, 0.9));
+    transform: translateY(10%) !important;
+    visibility: hidden;
+    opacity: 0; }
+    #work .project .project-info-container .project-info-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; }
+      #work .project .project-info-container .project-info-content .project-name {
+        font-size: 1rem !important; }
+      #work .project .project-info-container .project-info-content .project-btn {
+        transition: transform .3s; }
+        #work .project .project-info-container .project-info-content:hover {
+          transform: scale(1.1); }
+
+/*# sourceMappingURL=main.css.map */
